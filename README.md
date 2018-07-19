@@ -2,7 +2,7 @@
 
 Mimo profiles with any ENS name (you won't need a mimoapp.eth subdomain!)
 
-This is a vastly simpler Mimo contract, namely because we don't need to setup our own registrar. These contracts are essentially a claims registry.
+This is a vastly simpler Mimo contract, mainly because we don't need to setup our own registrar. These contracts are essentially a claims registry.
 
 You can use any ENS name with this, such as wallet.eth or wallet.vitalik.eth, as long as you own the name of course.
 

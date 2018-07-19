@@ -14,7 +14,7 @@ contract Mimo {
 
 
     function publish(bytes32 _node, bytes  _info) public {
-        require(msg.sender == owner(_node));
+        require(msg.sender == owner(_node), "You do not own this node.");
         emit Publish(_node, _info);
     }
 
