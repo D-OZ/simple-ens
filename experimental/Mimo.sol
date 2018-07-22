@@ -18,7 +18,7 @@ contract Mimo is Ownable {
     }
 
     function publish(bytes32 _node, bytes  _info) public {
-        publish(_node, _info, ens);
+        lib.publish(_node, _info, ens);
     }
 
     function change(address _ens, address _lib) public onlyOwner {
