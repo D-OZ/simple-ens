@@ -3,24 +3,27 @@ pragma solidity ^0.4.24;
 
 contract Mimo is Ownable {
 
-    using MimoLib for MimoLib.Data;
-    MimoLib.Data public lib;
+    // Interface used to interact with a deployed MimoLib
+    MimoI public lib;
 
+    // Address of ENS registrar used
     address public ens;
 
     // Logged when the owner of a node publishes new info about said node.
     event Publish(bytes32 indexed _node, bytes _info);
 
-    constructor(address _ens) public {
+    constructor(address _ens, address _lib) public {
         ens = _ens;
+        lib = _lib;
     }
 
     function publish(bytes32 _node, bytes  _info) public {
-        lib.publish(_node, _info, ens);
+        publish(_node, _info, ens);
     }
 
-    function changeENS(address _ens) public onlyOwner {
+    function change(address _ens, address _lib) public onlyOwner {
         ens = _ens;
+        lib = _lib;
     }
 
 }
