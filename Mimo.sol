@@ -15,6 +15,7 @@ contract Mimo {
 
     function publish(bytes32 _node, bytes  _info) public {
         require(msg.sender == owner(_node), "You do not own this node.");
+        require(owner(_node) != address(0), "This node does not exist.");
         emit Publish(_node, _info);
     }
 
