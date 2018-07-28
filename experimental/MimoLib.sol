@@ -8,7 +8,6 @@ library MimoLib {
 
     function publish(bytes32 _node, bytes  _info, address _ens) public {
         require(msg.sender == owner(_node, _ens));
-        require(owner(_node, _ens) != address(0));
         Publish(_node, _info);
     }
 
